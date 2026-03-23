@@ -1,47 +1,64 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #111;
 }
 
-/* NAV FIJO REAL */
+/* NAV */
 .nav {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 140px;
-  background: #fff;
+  height: 110px;
   z-index: 1000;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
 }
 
+/* MENÚ */
 .menu {
   display: flex;
   gap: 25px;
   margin-bottom: 5px;
 }
 
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* LOGO */
 .logo {
-  height: 120px;
+  height: 80px;
+  object-fit: contain;
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  padding-top: 140px;
+  height: calc(100vh - 110px);
+  margin-top: 110px;
   position: relative;
   overflow: hidden;
 }
 
+/* SLIDER */
 .slider {
   position: absolute;
   width: 100%;
@@ -51,6 +68,7 @@ body {
 .track {
   display: flex;
   width: 200%;
+  height: 100%;
   animation: scroll 30s linear infinite;
 }
 
@@ -61,6 +79,7 @@ body {
 }
 
 @keyframes scroll {
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
@@ -70,56 +89,181 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  text-align: center;
+  max-width: 550px;
+
   background: rgba(255,255,255,0.3);
   backdrop-filter: blur(12px);
+
   padding: 20px;
   border-radius: 20px;
-  text-align: center;
-  max-width: 500px;
 }
 
-/* SECCIONES */
-.about, .portfolio, .contacto {
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ABOUT */
+.about {
   padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
   text-align: center;
 }
 
-/* GRID */
+.about h2 {
+  margin-bottom: 20px;
+}
+
+.about ul {
+  text-align: left;
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.about li {
+  margin-bottom: 6px;
+}
+
+/* PORTFOLIO */
+.portfolio {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.portfolio h2 {
+  margin-bottom: 30px;
+}
+
+/* 2 COLUMNAS SIEMPRE */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
 .item img {
   width: 100%;
-  height: 200px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 18px;
 }
 
-/* BOTONES */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: 1px solid #000;
-  border-radius: 20px;
-  text-decoration: none;
+/* CONTACTO */
+.contacto {
+  padding: 80px 20px;
+  text-align: center;
 }
 
-/* FLOAT */
-.whatsapp-float, .instagram-float {
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 0.85rem;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+/* BOTONES FLOTANTES */
+.whatsapp-float {
   position: fixed;
+  bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  font-size: 24px;
+  z-index: 1000;
 }
 
-.whatsapp-float { bottom: 20px; background: #25D366; }
-.instagram-float { bottom: 80px; background: #E1306C; }
+.instagram-float {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: #E1306C;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+
+  .nav{
+    height: 90px;
+  }
+
+  .logo{
+    height: 60px;
+  }
+
+  .menu{
+    gap: 12px;
+  }
+
+  .menu a{
+    font-size: 0.75rem;
+  }
+
+  .hero{
+    height: calc(100vh - 90px);
+    margin-top: 90px;
+  }
+
+  .hero-text{
+    width: 90%;
+    padding: 15px;
+  }
+
+  .hero-text h1{
+    font-size: 1.4rem;
+  }
+
+  .hero-text p{
+    font-size: 0.8rem;
+  }
+
+  .grid{
+    gap: 10px;
+  }
+
+  .item img{
+    height: 180px;
+  }
+
+}
