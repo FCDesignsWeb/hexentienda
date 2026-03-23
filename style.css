@@ -5,16 +5,15 @@
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   font-family: 'Inter', sans-serif;
   background: #fff;
   color: #111;
 }
 
-/* NAV */
 .nav {
   position: fixed;
+  top: 0;
   width: 100%;
   padding: 15px 20px 25px;
   text-align: center;
@@ -22,7 +21,6 @@ body {
   z-index: 1000;
 }
 
-/* MENÚ */
 .menu {
   display: flex;
   justify-content: center;
@@ -34,23 +32,20 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 0.9rem;
-  letter-spacing: 1px;
 }
 
-/* LOGO */
 .logo {
   height: 140px;
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
+  height: calc(100vh - 160px);
+  margin-top: 160px;
   position: relative;
   overflow: hidden;
-  margin-top: 160px;
 }
 
-/* SLIDER */
 .slider {
   position: absolute;
   width: 100%;
@@ -65,7 +60,7 @@ body {
 
 .track img {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -74,57 +69,35 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-/* TEXTO VIDRIO */
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+  max-width: 600px;
   text-align: center;
-  max-width: 650px;
-
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  padding: 30px;
+  padding: 25px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .hero-text h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
-.hero-text p {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-/* BOTÓN */
 .btn {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 25px;
   border: 1px solid #000;
-  color: #000;
-  text-decoration: none;
   border-radius: 30px;
-  font-size: 0.85rem;
-  background: rgba(255,255,255,0.6);
-  transition: 0.3s;
+  text-decoration: none;
+  color: #000;
 }
 
-.btn:hover {
-  background: #000;
-  color: #fff;
-}
-
-/* 🔥 NUEVA SECCIÓN ABOUT */
+/* ABOUT */
 .about {
   padding: 100px 20px;
   max-width: 800px;
@@ -132,55 +105,28 @@ body {
   text-align: center;
 }
 
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
-.about p {
-  margin-bottom: 15px;
-  color: #333;
-}
-
 .about ul {
   text-align: left;
   margin-top: 15px;
-  padding-left: 20px;
-}
-
-.about li {
-  margin-bottom: 6px;
-  font-size: 0.9rem;
 }
 
 /* PORTFOLIO */
 .portfolio {
-  padding: 120px 40px 80px;
+  padding: 100px 20px;
   text-align: center;
 }
 
-.portfolio h2 {
-  margin-bottom: 40px;
-}
-
-/* 2 COLUMNAS */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  gap: 20px;
 }
 
 .item img {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.item p {
-  margin-top: 10px;
-  font-size: 0.9rem;
 }
 
 /* CONTACTO */
@@ -191,69 +137,57 @@ body {
 
 /* FOOTER */
 .footer {
-  text-align: center;
   padding: 30px;
-  font-size: 0.85rem;
-  color: #555;
+  text-align: center;
   border-top: 1px solid #eee;
 }
 
-/* BOTONES FLOTANTES */
+/* BOTONES */
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
   right: 25px;
+  background: #25D366;
   width: 55px;
   height: 55px;
-  background: #25D366;
-  color: #fff;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 24px;
-  z-index: 1000;
+  align-items: center;
+  color: #fff;
 }
 
 .instagram-float {
   position: fixed;
   bottom: 90px;
   right: 25px;
+  background: #E1306C;
   width: 55px;
   height: 55px;
-  background: #E1306C;
-  color: #fff;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 24px;
-  z-index: 1000;
+  align-items: center;
+  color: #fff;
 }
 
 /* RESPONSIVE */
 @media (max-width:768px){
 
-  .logo{
+  .logo {
     height: 100px;
   }
 
-  .grid{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  .grid {
+    gap: 10px;
   }
 
-  .item img{
+  .item img {
     height: 180px;
   }
 
-  .hero-text{
+  .hero-text {
     width: 90%;
-    padding: 20px;
-  }
-
-  .hero-text h1{
-    font-size: 1.6rem;
   }
 
 }
