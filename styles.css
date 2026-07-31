@@ -1,210 +1,625 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: white;
-  color: black;
+html {
+  scroll-behavior: smooth;
 }
 
-/* NAVBAR PRO */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: white;
+
+  padding: 0 35px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e5e5e5;
+
   z-index: 1000;
-  border-bottom: 1px solid #eee;
 }
 
 .nav-left {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-left a {
+  color: #111;
   text-decoration: none;
-  color: black;
-  font-size: 12px;
+
+  font-size: 11px;
+  font-weight: 400;
   letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: opacity 0.3s ease;
+}
+
+.nav-left a:hover {
+  opacity: 0.5;
 }
 
 .nav-right {
   display: flex;
   gap: 15px;
+
   font-size: 14px;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
   position: relative;
+
+  width: 100%;
   height: 90vh;
-  margin-top: 60px;
+
+  margin-top: 65px;
+
+  overflow: hidden;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  display: block;
 }
+
+
+/* Capa blanca muy suave */
 
 .hero::before {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.3);
+
+  background: rgba(255, 255, 255, 0.18);
+
+  z-index: 1;
 }
+
+
+/* LOGO */
 
 .logo-home {
   position: absolute;
-  top: 20px;
+
+  top: 25px;
   left: 50%;
+
   transform: translateX(-50%);
-  height: 50px;
+
+  height: 55px;
+  width: auto;
+
+  object-fit: contain;
+
   z-index: 3;
 }
 
+
+/* TEXTO HERO */
+
 .hero-texto {
   position: absolute;
-  top: 60%;
+
+  top: 58%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+
+  width: min(700px, 85%);
+
   text-align: center;
+
   z-index: 2;
-  width: 80%;
 }
 
 .hero-texto h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+
+  font-size: clamp(26px, 4vw, 48px);
+
+  font-weight: 400;
+  letter-spacing: 2px;
+
+  line-height: 1.2;
 }
 
-.hero-texto li,
 .descripcion {
-  font-size: 12px;
+  margin: 12px auto;
+
+  max-width: 600px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 1.8;
 }
 
-/* INTRO */
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 12px 28px;
+
+  background: #111;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  border: 1px solid #111;
+
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
 .intro {
-  padding: 60px 30px;
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 100px 40px;
 }
 
 .intro h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .intro h3 {
-  font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-/* GRID PRO TIENDA */
+.intro p {
+  max-width: 850px;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 2;
+}
+
+
+/* =========================
+   ASESORAMIENTO
+========================= */
+
+.about {
+  padding: 90px 40px;
+
+  background: #f7f7f7;
+
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 35px;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.about ul {
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.about li {
+  padding: 10px 0;
+
+  border-bottom: 1px solid #ddd;
+
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.about p {
+  max-width: 650px;
+
+  margin: 30px auto 0;
+
+  font-size: 14px;
+  font-weight: 300;
+}
+
+
+/* =========================
+   PORTFOLIO / DISEÑOS
+========================= */
+
+.portfolio {
+  padding: 90px 30px;
+}
+
+.titulo {
+  margin-bottom: 35px;
+
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+
+/* GRID */
+
 .grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  padding: 20px;
+
+  gap: 10px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
 }
 
+
+/* TARJETAS */
+
 .card {
-  aspect-ratio: 3/4;
-  overflow: hidden;
   position: relative;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #f5f5f5;
+
   cursor: pointer;
 }
 
 .card img {
   width: 100%;
   height: 100%;
+
+  display: block;
+
   object-fit: cover;
-  transition: transform 0.4s ease;
+
+  transition: transform 0.6s ease;
 }
 
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* INFO PRODUCTO */
+
+/* NOMBRE DEL DISEÑO */
+
 .card-info {
   position: absolute;
+
   bottom: 0;
+  left: 0;
+
   width: 100%;
-  background: rgba(255,255,255,0.8);
-  padding: 5px;
+
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #111;
+
+  text-align: center;
+
   font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+  padding: 100px 30px;
+
   text-align: center;
+
+  background: #f7f7f7;
 }
 
-/* TITULOS */
-.titulo {
-  padding: 20px;
-  font-size: 20px;
+.contacto h2 {
+  margin-bottom: 15px;
+
+  font-size: 32px;
+  font-weight: 400;
 }
 
-.subtitulo {
-  padding: 0 20px;
-  margin-top: 20px;
+.contacto p {
+  margin-bottom: 15px;
+
+  font-size: 14px;
+  font-weight: 300;
 }
 
-/* CONTACTO */
-.contacto-hero {
-  padding: 100px 20px 30px;
-}
 
-.contacto-box {
-  padding: 20px;
-}
+/* =========================
+   BOTONES FLOTANTES
+========================= */
 
-.formulario {
+.whatsapp-float,
+.instagram-float {
+  position: fixed;
+
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #111;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  z-index: 999;
+
+  transition: all 0.3s ease;
 }
 
-.formulario input,
-.formulario textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
+.whatsapp-float {
+  bottom: 80px;
 }
 
-button {
-  padding: 10px;
-  background: black;
-  color: white;
-  border: none;
+.instagram-float {
+  bottom: 20px;
 }
 
-/* FOOTER */
-footer {
+.whatsapp-float:hover,
+.instagram-float:hover {
+  background: #555;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 35px 20px;
+
+  background: #111;
+  color: #fff;
+
   text-align: center;
-  padding: 20px;
-  font-size: 12px;
+
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
-/* MOBILE */
+.footer p {
+  margin: 5px 0;
+}
+
+
+/* =========================
+   RESPONSIVE / CELULAR
+========================= */
+
 @media (max-width: 768px) {
 
-  .nav-left a {
-    font-size: 10px;
+  /* NAV */
+
+  .navbar {
+    height: 60px;
+
+    padding: 0 15px;
   }
 
+  .nav-left {
+    gap: 12px;
+  }
+
+  .nav-left a {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .nav-right {
+    font-size: 12px;
+  }
+
+
+  /* HERO */
+
   .hero {
-    height: 60vh;
+    height: 75vh;
+
+    margin-top: 60px;
+  }
+
+  .logo-home {
+    top: 20px;
+
+    height: 42px;
+  }
+
+  .hero-texto {
+    width: 88%;
+
+    top: 58%;
+  }
+
+  .hero-texto h1 {
+    font-size: 25px;
+
+    letter-spacing: 1px;
+  }
+
+  .descripcion {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+
+  /* INTRO */
+
+  .intro {
+    padding: 70px 25px;
+  }
+
+  .intro h2 {
+    font-size: 26px;
+  }
+
+  .intro h3 {
+    font-size: 16px;
+  }
+
+  .intro p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  /* ASESORAMIENTO */
+
+  .about {
+    padding: 70px 25px;
+  }
+
+  .about h2 {
+    font-size: 25px;
+  }
+
+
+  /* GALERÍA */
+
+  .portfolio {
+    padding: 70px 10px;
+  }
+
+  .titulo {
+    font-size: 25px;
   }
 
   .grid {
-    gap: 6px;
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 5px;
+  }
+
+  .card-info {
+    padding: 8px;
+
+    font-size: 9px;
+  }
+
+
+  /* CONTACTO */
+
+  .contacto {
+    padding: 70px 25px;
+  }
+
+  .contacto h2 {
+    font-size: 27px;
+  }
+
+
+  /* BOTONES FLOTANTES */
+
+  .whatsapp-float,
+  .instagram-float {
+    width: 42px;
+    height: 42px;
+
+    right: 15px;
+  }
+
+  .whatsapp-float {
+    bottom: 70px;
+  }
+
+  .instagram-float {
+    bottom: 15px;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    padding: 30px 15px;
+
+    font-size: 10px;
   }
 
 }
