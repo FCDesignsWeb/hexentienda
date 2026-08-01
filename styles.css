@@ -74,8 +74,7 @@ body {
 
 /* =========================
    HERO
-   MODELO IZQUIERDA
-   TEXTO DERECHA
+   ESCRITORIO
 ========================= */
 
 .hero {
@@ -94,7 +93,7 @@ body {
 }
 
 
-/* IMAGEN DE LA MODELO */
+/* IMAGEN MODELO */
 
 .hero-img {
   width: 50%;
@@ -127,7 +126,7 @@ body {
 }
 
 
-/* TEXTO */
+/* TEXTO HERO */
 
 .hero-texto {
   width: 50%;
@@ -336,9 +335,7 @@ body {
 }
 
 
-/* =========================
-   CARRUSEL DE DISEÑOS
-========================= */
+/* GRID */
 
 .grid {
   display: flex;
@@ -352,6 +349,8 @@ body {
   overflow: hidden;
 }
 
+
+/* TARJETAS */
 
 .card {
   position: relative;
@@ -367,10 +366,8 @@ body {
   cursor: pointer;
 }
 
-
 .card img {
   width: 100%;
-
   height: 100%;
 
   display: block;
@@ -379,7 +376,6 @@ body {
 
   transition: transform 0.6s ease;
 }
-
 
 .card:hover img {
   transform: scale(1.04);
@@ -392,7 +388,6 @@ body {
   position: absolute;
 
   bottom: 0;
-
   left: 0;
 
   width: 100%;
@@ -451,17 +446,14 @@ body {
   right: 20px;
 
   width: 48px;
-
   height: 48px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   background: #111;
-
   color: #fff;
 
   text-decoration: none;
@@ -495,7 +487,6 @@ body {
   padding: 35px 20px;
 
   background: #111;
-
   color: #fff;
 
   text-align: center;
@@ -542,17 +533,15 @@ body {
   }
 
 
-
   /* =========================
      HERO CELULAR
-     MODELO ARRIBA
-     TEXTO ABAJO
+     IMAGEN COMPLETA
   ========================= */
 
   .hero {
     height: auto;
 
-    min-height: calc(100vh - 60px);
+    min-height: 0;
 
     margin-top: 60px;
 
@@ -560,27 +549,26 @@ body {
 
     flex-direction: column;
 
+    background: #fff;
+
     overflow: visible;
   }
 
 
-  /* IMAGEN */
+  /* IMAGEN DE LA MODELO */
 
   .hero-img {
     width: 100%;
 
-    height: 60vh;
+    height: auto;
 
-    min-height: 400px;
+    min-height: 0;
 
-    object-fit: cover;
-
-    /*
-    Ajustá este valor si querés
-    mover la modelo dentro del encuadre
-    */
+    object-fit: contain;
 
     object-position: center center;
+
+    display: block;
   }
 
 
@@ -589,9 +577,9 @@ body {
   .logo-home {
     top: 20px;
 
-    right: auto;
-
     left: 50%;
+
+    right: auto;
 
     transform: translateX(-50%);
 
@@ -613,6 +601,8 @@ body {
     padding: 55px 25px 70px;
 
     display: flex;
+
+    flex-direction: column;
 
     justify-content: center;
 
@@ -659,7 +649,6 @@ body {
   }
 
 
-
   /* =========================
      INTRO
   ========================= */
@@ -683,7 +672,6 @@ body {
   }
 
 
-
   /* =========================
      ASESORAMIENTO
   ========================= */
@@ -697,7 +685,6 @@ body {
   }
 
 
-
   /* =========================
      GALERÍA
   ========================= */
@@ -709,7 +696,6 @@ body {
   .titulo {
     font-size: 25px;
   }
-
 
   .grid {
     display: flex;
@@ -727,18 +713,15 @@ body {
     display: none;
   }
 
-
   .card {
     flex: 0 0 75%;
   }
-
 
   .card-info {
     padding: 8px;
 
     font-size: 9px;
   }
-
 
 
   /* =========================
@@ -752,7 +735,6 @@ body {
   .contacto h2 {
     font-size: 27px;
   }
-
 
 
   /* =========================
@@ -777,7 +759,6 @@ body {
   }
 
 
-
   /* =========================
      FOOTER
   ========================= */
@@ -789,7 +770,6 @@ body {
   }
 
 }
-
 
 
 /* ==================================================
@@ -828,7 +808,6 @@ body {
 
   letter-spacing: 1px;
 }
-
 
 
 /* =========================
@@ -942,7 +921,6 @@ body {
 }
 
 
-
 /* =========================
    FORMULARIO
 ========================= */
@@ -1029,7 +1007,6 @@ body {
 }
 
 
-
 /* =========================
    UBICACIÓN
 ========================= */
@@ -1064,9 +1041,8 @@ body {
 }
 
 
-
 /* =========================
-   CONTACTO EN CELULAR
+   CONTACTO CELULAR
 ========================= */
 
 @media (max-width: 768px) {
