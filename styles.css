@@ -122,16 +122,12 @@ body {
 
 .logo-home {
   position: absolute;
-
   top: 30px;
   left: 50%;
-
   transform: translateX(-50%);
-
-  height: 55px;
-  width: auto;
-
-  z-index: 3;
+  width: 180px;
+  height: auto;
+  z-index: 10;
 }
 
 
@@ -597,25 +593,21 @@ body {
   }
 
 
-  /* =========================
-     LOGO SOBRE IMAGEN
-  ========================= */
+ /* LOGO EN CELULAR */
 
-  .logo-home {
-    position: absolute;
+.logo-home {
+  position: absolute;
 
-    top: 30px;
+  top: 30px;
+  left: 50%;
 
-    left: 50%;
+  transform: translateX(-50%);
 
-    transform: translateX(-50%);
+  width: 140px;
+  height: auto;
 
-    height: 42px;
-
-    width: auto;
-
-    z-index: 3;
-  }
+  z-index: 10;
+}
 
 
   /* =========================
